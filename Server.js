@@ -4,14 +4,12 @@ var router = express.Router();
 var path = __dirname + '/views/';
 
 router.use(function (req,res,next) {
-    // console.log("/" + req.method); 
     next();
 });
 
 app.use(express.static('public'));
 
 router.get("/",function(req,res){
-    // console.log("request address: " + req.connection.remoteAddress)
     res.sendFile(path + "home_2.html");
 });
 
@@ -42,5 +40,4 @@ app.use("*",function(req,res){
 });
 
 app.listen(80,function(){
-    // console.log("Live at Port 80");
 });
